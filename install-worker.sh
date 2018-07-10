@@ -56,6 +56,7 @@ sudo yum install -y \
     conntrack \
     curl \
     jq \
+    ec2-instance-connect \
     nfs-utils \
     socat \
     unzip \
