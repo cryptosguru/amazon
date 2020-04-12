@@ -106,6 +106,10 @@ if [[ "$INSTALL_DOCKER" == "true" ]]; then
     # until the issue is fixed upstream or we have another workaround.
     sudo yum downgrade -y containerd-1.3.2-1.amzn2
 
+    # runc `1.0.0-rc93` resulted in a regression: https://github.com/awslabs/amazon-eks-ami/issues/648
+    # pinning it to `1.0.0-rc92`
+    sudo yum downgrade -y runc.${MACHINE} 1.0.0-0.1.20200826.gitff819c7.amzn2
+
     # Enable docker daemon to start on boot.
     sudo systemctl daemon-reload
     sudo systemctl enable docker
