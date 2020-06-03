@@ -60,7 +60,8 @@ sudo yum install -y \
     nfs-utils \
     socat \
     unzip \
-    wget
+    wget \
+    ipvsadm
 
 curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
 sudo python get-pip.py
